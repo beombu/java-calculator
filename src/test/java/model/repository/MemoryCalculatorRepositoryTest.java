@@ -1,6 +1,7 @@
 package model.repository;
 
 import model.entity.Calculator;
+import model.vo.Expression;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -13,9 +14,9 @@ class MemoryCalculatorRepositoryTest {
     @Test
     void findAll() {
         //give
-        Calculator calculator1 = new Calculator("1 + 1", 2);
+        Calculator calculator1 = new Calculator(new Expression("1 + 1"), 2);
         repository.save(calculator1);
-        Calculator calculator2 = new Calculator("3 + 2 * 4 - 9 / 3", 8);
+        Calculator calculator2 = new Calculator(new Expression("3 + 2 * 4 - 9 / 3"), 8);
         repository.save(calculator2);
 
         //when

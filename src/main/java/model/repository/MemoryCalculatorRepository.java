@@ -2,7 +2,6 @@ package model.repository;
 
 import model.entity.Calculator;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +18,6 @@ public class MemoryCalculatorRepository implements CalculatorRepository {
 
     @Override
     public List<Calculator> findAll() {
-        return new ArrayList<>(store.values());
+        return (List<Calculator>) store.values();
     }
 }

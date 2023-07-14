@@ -43,7 +43,7 @@ public class CalculatorController {
             case CALCULATION -> {
                 Expression expression = input.expressionInput();
                 CalculationResult calculationResult = calculatePostfixExpression(expression);
-                repository.save(new Calculator(expression.getExpression(), calculationResult.getCalculationResult()));
+                repository.save(new Calculator(expression, calculationResult.getCalculationResult()));
                 output.printExpression(calculationResult);
             }
             default -> output.printSelectOtherMenu();
